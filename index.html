@@ -20,7 +20,7 @@
 
     #ornament-options {
       display: inline-block;
-      width: 400px; 
+      width: 500px; 
       height: 400px;
       vertical-align: top;
     }
@@ -310,7 +310,11 @@
       for (let i = 1; i <= 30; i++) {
         const newOptionElem = document.createElement('option');
         newOptionElem.value = i;
-        if (i === 23) {
+        if (i === 5) {
+          newOptionElem.textContent = `${i} (transparent yellow)`;
+        } else if (i === 7) {
+          newOptionElem.textContent = `${i} (transparent green)`;
+        } else if (i === 23) {
           newOptionElem.textContent = `${i} (white)`;
         } else if (i === 24) {
           newOptionElem.textContent = `${i} (clear)`;
