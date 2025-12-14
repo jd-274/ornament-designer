@@ -10,9 +10,6 @@
       font-size: 16px;
     }
 
-    #ornament-designer {
-    }
-
     #ornament-preview {
       display: inline-block;
       border: 1px solid black;
@@ -43,6 +40,12 @@
 
     .option-dropdown:focus {
       outline: none;
+    }
+
+    #randomize-button {
+      margin-top: 20px;
+      padding: 5px 10px;
+      font-family: monospace;
     }
 
     .color1 {
@@ -273,6 +276,7 @@
         <label>Font color:</label>
         <select id="option-font-color" class="option-dropdown"></select>
       </div>
+      <button id="randomize-button">Randomize!</button>
     </div>
   </div>
   <script>
@@ -306,6 +310,16 @@
     changeColorSelectElemValue(flowerCentersColorSelectElem, '5');
     changeColorSelectElemValue(fontColorSelectElem, '30');
 
+    const randomizeButton = document.querySelector('#randomize-button');
+    randomizeButton.addEventListener('click', () => {
+      changeColorSelectElemValue(bodyColorSelectElem, getRandomIntInclusive(1, 30));
+      changeColorSelectElemValue(nameplateColorSelectElem, getRandomIntInclusive(1, 30));
+      changeColorSelectElemValue(highlightColorSelectElem, getRandomIntInclusive(1, 30));
+      changeColorSelectElemValue(flowerPetalsColorSelectElem, getRandomIntInclusive(1, 30));
+      changeColorSelectElemValue(flowerCentersColorSelectElem, getRandomIntInclusive(1, 30));
+      changeColorSelectElemValue(fontColorSelectElem, getRandomIntInclusive(1, 30));
+    })
+
     function populateColorSelectElemOptions(selectElem) {
       for (let i = 1; i <= 30; i++) {
         const newOptionElem = document.createElement('option');
@@ -337,6 +351,12 @@
     function changeColorSelectElemValue(selectElem, newValue) {
       selectElem.value = newValue;
       selectElem.dispatchEvent(new Event('change')); // trigger event; ensure animation occurs
+    }
+
+    function getRandomIntInclusive(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min;
     }
   </script>
 </body>
