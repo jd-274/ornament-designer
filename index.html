@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2025 Ornament Designer</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: monospace;
+      font-size: 16px;
+    }
+
+    #ornament-designer {
+    }
+
+    #ornament-preview {
+      display: inline-block;
+      border: 1px solid black;
+    }
+
+    #ornament-options {
+      display: inline-block;
+      width: 400px; 
+      height: 400px;
+      vertical-align: top;
+    }
+
+    .option-row {
+      display: flex;
+      justify-content: space-between; 
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #f7f9fb;
+      border-radius: 8px;
+    }
+
+    .option-dropdown {
+      padding: 5px 7px;
+      font-family: inherit;
+      border: 1px solid #c9d0d6;
+      border-radius: 6px;
+    }
+
+    .option-dropdown:focus {
+      outline: none;
+    }
+
+    .color1 {
+      fill: #EF2327
+    }
+
+    .color2 {
+      fill: #FDB54B
+    }
+
+    .color3 {
+      fill: #F8E45A;
+    }
+
+    .color4 {
+      fill: #E9F061
+    }
+
+    .color5 {
+      fill: #E3F77D
+    }
+
+    .color6 {
+      fill: #D4F8CD
+    }
+
+    .color7 {
+      fill: #54D797
+    }
+
+    .color8 {
+      fill: #9DFABD
+    }
+
+    .color9 {
+      fill: #46D5AB
+    }
+
+    .color10 {
+      fill: #048E7E
+    }
+
+    .color10 {
+      fill: #048E7E
+    }
+
+    .color11 {
+      fill: #A3DBF3
+    }
+
+    .color12 {
+      fill: #5CB7F2
+    }
+
+    .color13 {
+      fill: #8DD6F7
+    }
+
+    .color14 {
+      fill: #725A8E
+    }
+
+    .color15 {
+      fill: #C4A5E9
+    }
+
+    .color16 {
+      fill: #DEC9EE
+    }
+
+    .color17 {
+      fill: #FDD3E3
+    }
+
+    .color18 {
+      fill: #FD99AE
+    }
+    
+    .color19 {
+      fill: #FFEACD
+    }
+
+    .color20 {
+      fill: #FEEAD1
+    }
+
+    .color21 {
+      fill: #FEEAC1
+    }
+
+    .color22 {
+      fill: #CDCFCE;
+    }
+
+    .color23 {
+      fill: white;
+    }
+
+    .color24 {
+      fill: white; /* leaving as white even though it's not a perfect representation of transparent... */
+    }
+
+    .color25 {
+      fill: #D36870;
+    }
+
+    .color26 {
+      fill: #A06869;
+    }
+
+    .color27 {
+      fill: #8C7770;
+    }
+
+    .color28 {
+      fill: #CD9687;
+    }
+
+    .color29 {
+      fill: #9D9D9F;
+    }
+
+    .color30 {
+      fill: black;
+    }
+  </style>
+</head>
+<body>
+  <h1>2025 Ornament Designer</h1>
+  <div id="ornament-designer">
+    <svg id="ornament-preview" width="400" height="400" viewBox="0 0 19 20">
+      <linearGradient id="ornament-top-gradient">
+        <stop offset="0%" stop-color="gold" />
+        <stop offset="100%" stop-color="silver"/>
+      </linearGradient>
+  
+      <g id="ornament-top">
+        <rect x="7" y="1" width="5" height="2" fill="url(#ornament-top-gradient)"></rect>
+      </g>
+      <g id="ornament-body">
+        <rect x="5" y="3" width="9" height="1"></rect>
+        <rect x="4" y="4" width="11" height="1"></rect>
+        <rect x="3" y="5" width="13" height="1"></rect>
+        <rect x="2" y="6" width="15" height="10"></rect>
+        <rect x="3" y="16" width="13" height="1"></rect>
+        <rect x="4" y="17" width="11" height="1"></rect>
+        <rect x="5" y="18" width="9" height="1"></rect>
+      </g>
+      <g id="ornament-highlight">
+        <rect x="2" y="7" width="15" height="8"></rect>
+      </g>
+      <g id="ornament-nameplate">
+        <rect x="1" y="8" width="17" height="6"></rect>
+      </g>
+      <g id="ornament-flower-petals">
+        <rect x="5" y="4" width="1" height="3"></rect>
+        <rect x="4" y="5" width="3" height="1"></rect>
+  
+        <rect x="9" y="4" width="1" height="3"></rect>
+        <rect x="8" y="5" width="3" height="1"></rect>
+  
+        <rect x="13" y="4" width="1" height="3"></rect>
+        <rect x="12" y="5" width="3" height="1"></rect>
+  
+        <rect x="5" y="15" width="1" height="3"></rect>
+        <rect x="4" y="16" width="3" height="1"></rect>
+  
+        <rect x="9" y="15" width="1" height="3"></rect>
+        <rect x="8" y="16" width="3" height="1"></rect>
+  
+        <rect x="13" y="15" width="1" height="3"></rect>
+        <rect x="12" y="16" width="3" height="1"></rect>
+      </g>
+      <g id="ornament-flower-centers">
+        <rect x="5" y="5" width="1" height="1"></rect>
+  
+        <rect x="9" y="5" width="1" height="1"></rect>
+  
+        <rect x="13" y="5" width="1" height="1"></rect>
+  
+        <rect x="5" y="16" width="1" height="1"></rect>
+  
+        <rect x="9" y="16" width="1" height="1"></rect>
+  
+        <rect x="13" y="16" width="1" height="1"></rect>
+      </g>
+      <g id="ornament-font">
+        <rect x="2" y="9" width="1" height="4"></rect>
+        <rect x="3" y="12" width="2" height="1"></rect>
+  
+        <rect x="6" y="9" width="1" height="2"></rect>
+        <rect x="7" y="11" width="1" height="2"></rect>
+        <rect x="8" y="9" width="1" height="2"></rect>
+  
+        <rect x="10" y="9" width="1" height="4"></rect>
+        <rect x="11" y="10" width="1" height="1"></rect>
+        <rect x="12" y="9" width="1" height="1"></rect>
+        <rect x="12" y="11" width="1" height="2"></rect>
+  
+        <rect x="14" y="10" width="1" height="3"></rect>
+        <rect x="15" y="9" width="1" height="1"></rect>
+        <rect x="15" y="11" width="1" height="1"></rect>
+        <rect x="16" y="10" width="1" height="3"></rect>
+      </g>
+    </svg>
+    <div id="ornament-options">
+      <div class="option-row">
+        <label>Body color:</label>
+        <select id="option-body-color" class="option-dropdown"></select>
+      </div>
+      <div class="option-row">
+        <label>Nameplate color:</label>
+        <select id="option-nameplate-color" class="option-dropdown"></select>
+      </div>
+      <div class="option-row">
+        <label>Highlight color:</label>
+        <select id="option-highlight-color" class="option-dropdown"></select>
+      </div>
+      <div class="option-row">
+        <label>"Flower petal" color:</label>
+        <select id="option-flower-petals-color" class="option-dropdown"></select>
+      </div>
+      <div class="option-row">
+        <label>"Flower center" color:</label>
+        <select id="option-flower-centers-color" class="option-dropdown"></select>
+      </div>
+      <div class="option-row">
+        <label>Font color:</label>
+        <select id="option-font-color" class="option-dropdown"></select>
+      </div>
+    </div>
+  </div>
+  <script>
+    const bodyColorSelectElem = document.querySelector('#option-body-color');
+    const nameplateColorSelectElem = document.querySelector('#option-nameplate-color');
+    const highlightColorSelectElem = document.querySelector('#option-highlight-color');
+    const flowerPetalsColorSelectElem = document.querySelector('#option-flower-petals-color');
+    const flowerCentersColorSelectElem = document.querySelector('#option-flower-centers-color');
+    const fontColorSelectElem = document.querySelector('#option-font-color');
+
+    // note: they all have the same options
+    populateColorSelectElemOptions(bodyColorSelectElem);
+    populateColorSelectElemOptions(nameplateColorSelectElem);
+    populateColorSelectElemOptions(highlightColorSelectElem);
+    populateColorSelectElemOptions(flowerPetalsColorSelectElem);
+    populateColorSelectElemOptions(flowerCentersColorSelectElem);
+    populateColorSelectElemOptions(fontColorSelectElem);
+
+    addColorSelectElemChangeHandler(bodyColorSelectElem, 'ornament-body');
+    addColorSelectElemChangeHandler(nameplateColorSelectElem, 'ornament-nameplate');
+    addColorSelectElemChangeHandler(highlightColorSelectElem, 'ornament-highlight');
+    addColorSelectElemChangeHandler(flowerPetalsColorSelectElem, 'ornament-flower-petals');
+    addColorSelectElemChangeHandler(flowerCentersColorSelectElem, 'ornament-flower-centers');
+    addColorSelectElemChangeHandler(fontColorSelectElem, 'ornament-font');
+
+    // set defaults
+    changeColorSelectElemValue(bodyColorSelectElem, '1');
+    changeColorSelectElemValue(nameplateColorSelectElem, '14');
+    changeColorSelectElemValue(highlightColorSelectElem, '4');
+    changeColorSelectElemValue(flowerPetalsColorSelectElem, '12');
+    changeColorSelectElemValue(flowerCentersColorSelectElem, '5');
+    changeColorSelectElemValue(fontColorSelectElem, '30');
+
+    function populateColorSelectElemOptions(selectElem) {
+      for (let i = 1; i <= 30; i++) {
+        const newOptionElem = document.createElement('option');
+        newOptionElem.value = i;
+        if (i === 23) {
+          newOptionElem.textContent = `${i} (white)`;
+        } else if (i === 24) {
+          newOptionElem.textContent = `${i} (clear)`;
+        } else {
+          newOptionElem.textContent = i;
+        }
+        
+        selectElem.append(newOptionElem);
+      }
+    }
+
+    function addColorSelectElemChangeHandler(selectElem, targetSVGElemID) {
+      selectElem.addEventListener('change', (e) => {
+        const optionValue = e.target.value;
+        const targetSVGElem = document.querySelector(`#${targetSVGElemID}`);
+        targetSVGElem.className.baseVal = `color${optionValue}`;
+      });
+    }
+
+    function changeColorSelectElemValue(selectElem, newValue) {
+      selectElem.value = newValue;
+      selectElem.dispatchEvent(new Event('change')); // trigger event; ensure animation occurs
+    }
+  </script>
+</body>
+</html>
